@@ -1,4 +1,4 @@
-ldap_auth:
+pam_ldap:
     host: localhost
     port: 389
     base: 'ou=dep,o=org'

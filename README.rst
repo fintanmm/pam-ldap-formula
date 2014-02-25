@@ -1,5 +1,5 @@
 =========
-ldap-auth
+pam-ldap
 =========
 
 Formula to set up and configure ldap authentication.
@@ -15,7 +15,7 @@ Available states
 .. contents::
     :local:
 
-``ldap-auth``
+``pam-ldap``
 ----------
 
 Installs ldap and configures authentication.
