@@ -30,5 +30,6 @@ pam_ldap:
             pam_member_attribute: {{ salt['pillar.get']('pam_ldap:pam_member_attribute') }}
             pam_password: {{ salt['pillar.get']('pam_ldap:pam_password') }}
             ssl: {{ salt['pillar.get']('pam_ldap:ssl') }}
-            tls_cacertfile: {{ salt['pillar.get']('pam_ldap:tls_cacertfile') }}
-            tls_cacertdir: {{ salt['pillar.get']('pam_ldap:tls_cacertdir') }}
+            tls_checkpeer: {{ salt['pillar.get']('pam_ldap:tls_checkpeer', 'no') }}
+            tls_cacertfile: {{ salt['pillar.get']('pam_ldap:tls_cacertfile', '') }}
+            tls_cacertdir: {{ salt['pillar.get']('pam_ldap:tls_cacertdir', '') }}
