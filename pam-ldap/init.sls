@@ -11,6 +11,8 @@ pam_ldap:
     pkg:
         - installed
         - name: {{ pam_ldap.pkg }}
+
+{{ pam_ldap.config }}:
    file.managed:
         - source: salt://pam_ldap/files/ldap.conf
         - user: user
