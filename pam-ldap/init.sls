@@ -7,7 +7,7 @@ tls_cacertfile:
         - group: root
         - mode: 640
 
-pam_ldap:
+pam-ldap:
     pkg:
         - installed
         - name: {{ pam_ldap.pkg }}
