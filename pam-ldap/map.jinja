@@ -1,6 +1,6 @@
-{% set pam_ldap = salt['grains.filter_by']({
+{% set pam-ldap = salt['grains.filter_by']({
     'Ubuntu': {
         'pkg': 'libpam-ldap',
         'config': '/etc/ldap.conf',
     },
-}, merge=salt['pillar.get']('pam_ldap:lookup')) %}
+}, merge=salt['pillar.get']('pam-ldap:lookup')) %}
