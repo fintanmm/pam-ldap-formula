@@ -38,5 +38,3 @@ ldap_conf:
         tls_checkpeer {{ salt['pillar.get']('pam:ldap:tls_checkpeer', 'no') }}
         tls_cacertfile {{ salt['pillar.get']('pam:ldap:tls_cacertfile', '') }}
         tls_cacertdir {{ salt['pillar.get']('pam:ldap:tls_cacertdir', '') }}
-    - require:
-      - file: {{ pam_ldap.config }}
