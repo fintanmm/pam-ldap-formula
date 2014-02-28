@@ -14,7 +14,7 @@ pam-ldap:
 
 {{ pam_ldap.config }}:
    file.managed:
-        - source: salt://pam_ldap/files/ldap.conf
+        - source: salt://pam-ldap/files/ldap.conf
         - user: user
         - group: user
         - mode: 644
