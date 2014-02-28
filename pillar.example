@@ -8,6 +8,7 @@ pam:
         binddn: 'cn=Manager,dc=example,dc=com'
         bindpw: secret
         scope: sub
+        pam_lookup_policy: yes
         pam_groupdn: 'cn=PAM,ou=Groups,dc=padl,dc=com'
         pam_member_attribute: member
         pam_password: ad
