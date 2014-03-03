@@ -39,7 +39,9 @@ ldap_conf:
         - pam_groupdn {{ salt['pillar.get']('pam:ldap:pam_groupdn') }}
         - pam_member_attribute {{ salt['pillar.get']('pam:ldap:pam_member_attribute', 'member') }}
         - pam_password {{ salt['pillar.get']('pam:ldap:pam_password') }}
+        {% if salt['pillar.get']('pam:ldap:ssl') %}
         - ssl {{ salt['pillar.get']('pam:ldap:ssl') }}
+        {% endif %}
         {% if salt['pillar.get']('pam:ldap:tls_checkpeer') == 'yes' %}
         - tls_checkpeer {{ salt['pillar.get']('pam:ldap:tls_checkpeer', 'no') }}
         - tls_cacertfile {{ salt['pillar.get']('pam:ldap:tls_cacertfile', '') }}
