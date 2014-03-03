@@ -28,14 +28,18 @@ ldap_conf:
         - base {{ salt['pillar.get']('pam:ldap:base') }}
         - ldap_version {{ salt['pillar.get']('pam:ldap:version', 3) }}
         - bind_policy {{ salt['pillar.get']('pam:ldap:policy') }}
+        {% if salt['pillar.get']('pam:ldap:binddn') %}
         - binddn {{ salt['pillar.get']('pam:ldap:binddn', '') }}
         - bindpw {{ salt['pillar.get']('pam:ldap:bindpw', '') }}
+        {% endif %}
         - scope {{ salt['pillar.get']('pam:ldap:scope', 'sub') }}
         - pam_lookup_policy {{ salt['pillar.get']('pam:ldap:pam_lookup_policy', 'yes') }}
         - pam_groupdn {{ salt['pillar.get']('pam:ldap:pam_groupdn') }}
         - pam_member_attribute {{ salt['pillar.get']('pam:ldap:pam_member_attribute', 'member') }}
         - pam_password {{ salt['pillar.get']('pam:ldap:pam_password') }}
         - ssl {{ salt['pillar.get']('pam:ldap:ssl') }}
+        {% if salt['pillar.get']('pam:ldap:tls_checkpeer') == 'yes' %}
         - tls_checkpeer {{ salt['pillar.get']('pam:ldap:tls_checkpeer', 'no') }}
         - tls_cacertfile {{ salt['pillar.get']('pam:ldap:tls_cacertfile', '') }}
         - tls_cacertdir {{ salt['pillar.get']('pam:ldap:tls_cacertdir', '') }}
+        {% endif %}
