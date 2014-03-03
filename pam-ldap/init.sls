@@ -24,7 +24,9 @@ ldap_conf:
     - name: /etc/ldap.conf
     - text:
         - host {{ salt['pillar.get']('pam:ldap:host') }}
-        - port {{ salt['pillar.get']('pam:ldap:port', 389) }}
+        {% if salt['pillar.get']('pam:ldap:port') %}
+        - port {{ salt['pillar.get']('pam:ldap:port') }}
+        {% endif %}
         - base {{ salt['pillar.get']('pam:ldap:base') }}
         - ldap_version {{ salt['pillar.get']('pam:ldap:version', 3) }}
         - bind_policy {{ salt['pillar.get']('pam:ldap:policy') }}
